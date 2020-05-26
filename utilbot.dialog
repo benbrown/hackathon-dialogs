@@ -1,0 +1,83 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "$designer": {
+      "name": "utilBot",
+      "id": "N8p3VL"
+    }
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "id": "x3sUaQ"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Qi5MBE"
+          },
+          "activity": "${SendActivity_Qi5MBE()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "FnbnpP"
+          },
+          "activityProcessed": true,
+          "dialog": "getEmail"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "yc8qRH"
+          },
+          "activity": "${SendActivity_yc8qRH()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "c2cgjh"
+          },
+          "activityProcessed": true,
+          "dialog": "getEmailWithConfirm",
+          "resultProperty": "user.email"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "AYlbNF"
+          },
+          "activity": "${SendActivity_AYlbNF()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "2W8Vlk"
+          },
+          "activityProcessed": true,
+          "dialog": "getEmailWithConfirm",
+          "resultProperty": "user.email",
+          "options": {
+            "prompt": "What yo address?",
+            "reprompt": "GET REAL BRO!",
+            "confirm": "DID I GET THIS RIGHT?",
+            "restart": "HOLD UP HOLD UP"
+          }
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "9RcFdB"
+          },
+          "activity": "${SendActivity_9RcFdB()}"
+        }
+      ]
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "generator": "utilbot.lg"
+}

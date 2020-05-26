@@ -1,0 +1,12 @@
+[import](common.lg)
+
+
+
+# SendActivity_9RcFdB()
+- PARENT BOT GOT EMAIL = ${ user.email }
+# SendActivity_AYlbNF()
+- GET AN EMAIL ADDRESS WITH CONFIRM AND CUSTOM PROMPTS
+# SendActivity_Qi5MBE()
+- GET AN EMAIL ADDRESS, NO CONFIRM
+# SendActivity_yc8qRH()
+- GET AN EMAIL ADDRESS WITH CONFIRMATION
