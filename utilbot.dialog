@@ -29,7 +29,10 @@
           },
           "activityProcessed": true,
           "dialog": "getPhoneWithConfirm",
-          "resultProperty": "user.phone"
+          "resultProperty": "user.phone",
+          "options": {
+            "phone": "512-555-1232"
+          }
         },
         {
           "$kind": "Microsoft.SendActivity",
