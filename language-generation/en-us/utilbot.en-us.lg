@@ -18,3 +18,7 @@
 - MULTI-LINE INPUTS!!
 # SendActivity_6KKjVA()
 - MULTILINE RESPONSE WAS: ```${ dialog.text }```
+# SendActivity_43kyCw()
+- PHONE NUMBER!!!
+# SendActivity_VQHIaI()
+- I hear that your phone number is ${ user.phone }.

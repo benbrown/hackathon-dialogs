@@ -18,6 +18,29 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
+            "id": "43kyCw"
+          },
+          "activity": "${SendActivity_43kyCw()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Mu0vRk"
+          },
+          "activityProcessed": true,
+          "dialog": "getPhoneWithConfirm",
+          "resultProperty": "user.phone"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "VQHIaI"
+          },
+          "activity": "${SendActivity_VQHIaI()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
             "id": "OgPD0m"
           },
           "activity": "${SendActivity_OgPD0m()}"

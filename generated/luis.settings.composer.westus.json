@@ -1,6 +1,8 @@
 {
     "luis": {
         "getEmail_en_us_lu": "4bb6438d-b931-4139-abdb-ed324b21c5e4",
-        "getEmailWithConfirm_en_us_lu": "b58b4a9f-16ac-4faf-b30c-d268f61551dc"
+        "getEmailWithConfirm_en_us_lu": "b58b4a9f-16ac-4faf-b30c-d268f61551dc",
+        "getPhone_en_us_lu": "e0f7439e-41d2-433d-9534-85110f91f41d",
+        "getPhoneWithConfirm_en_us_lu": "deced53b-f13f-44e3-ae22-25543a0c11e1"
     }
 }

@@ -1,8 +1,8 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "vTULFi",
-    "name": "getEmailWithConfirm"
+    "id": "BcpuW8",
+    "name": "getPhoneWithConfirm"
   },
   "autoEndDialog": true,
   "defaultResultProperty": "dialog.result",
@@ -11,39 +11,39 @@
       "$kind": "Microsoft.OnBeginDialog",
       "$designer": {
         "name": "BeginDialog",
-        "id": "FGyAZW"
+        "id": "PuWFxV"
       },
       "actions": [
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "PGiy3T"
+            "id": "OVqHcS"
           },
-          "condition": "!dialog.email",
+          "condition": "!dialog.phone",
           "actions": [
             {
               "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "QrIt9e"
+                "id": "6Xa0fo"
               },
               "activityProcessed": true,
-              "dialog": "getEmail",
-              "resultProperty": "dialog.email",
-              "options": "{prompt: dialog.prompt, reprompt: dialog.reprompt}"
+              "dialog": "getPhone",
+              "options": "{prompt:dialog.prompt, reprompt: dialog.reprompt}",
+              "resultProperty": "dialog.phone"
             }
           ]
         },
         {
           "$kind": "Microsoft.ConfirmInput",
           "$designer": {
-            "id": "sQdbWJ"
+            "id": "HRg0nn"
           },
           "defaultLocale": "en-us",
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": true,
           "allowInterruptions": false,
-          "prompt": "${ConfirmInput_Prompt_sQdbWJ()}",
+          "prompt": "${ConfirmInput_Prompt_HRg0nn()}",
           "choiceOptions": {
             "includeNumbers": true,
             "inlineOrMore": ", or ",
@@ -51,56 +51,54 @@
             "inlineSeparator": ", "
           },
           "property": "turn.confirmed",
-          "unrecognizedPrompt": "${ConfirmInput_UnrecognizedPrompt_sQdbWJ()}"
+          "unrecognizedPrompt": "${ConfirmInput_UnrecognizedPrompt_HRg0nn()}"
         },
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "MIMatc"
+            "id": "yJy3O4"
           },
-          "condition": "turn.confirmed == true && !@email",
+          "condition": "turn.confirmed == true && !@phonenumber",
           "actions": [
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "yT5cwk"
+                "id": "T3NXkf"
               },
-              "value": "=dialog.email"
+              "value": "=dialog.phone"
             }
           ],
           "elseActions": [
             {
               "$kind": "Microsoft.IfCondition",
               "$designer": {
-                "id": "zNFw6R"
+                "id": "e1BaS8"
               },
-              "condition": "@email != null",
+              "condition": "@phonenumber != null",
               "actions": [
                 {
                   "$kind": "Microsoft.RepeatDialog",
                   "$designer": {
-                    "id": "rvrvZ6"
+                    "id": "vJj0ly"
                   },
                   "activityProcessed": true,
-                  "allowLoop": false,
-                  "options": "{ email: @email, prompt: dialog.prompt, reprompt: dialog.reprompt, restart: dialog.restart, confirm: dialog.confirm}"
+                  "options": "{ phone: @phonenumber, prompt: dialog.prompt, reprompt: dialog.reprompt, restart: dialog.restart, confirm: dialog.confirm}"
                 }
               ],
               "elseActions": [
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
-                    "id": "L7hIZq"
+                    "id": "NY9QFc"
                   },
-                  "activity": "${SendActivity_L7hIZq()}"
+                  "activity": "${SendActivity_NY9QFc()}"
                 },
                 {
                   "$kind": "Microsoft.RepeatDialog",
                   "$designer": {
-                    "id": "NLlMMp"
+                    "id": "cp7zsk"
                   },
                   "activityProcessed": true,
-                  "allowLoop": false,
                   "options": "{ prompt: dialog.prompt, reprompt: dialog.reprompt, restart: dialog.restart, confirm: dialog.confirm}"
                 }
               ]
@@ -110,6 +108,6 @@
       ]
     }
   ],
-  "generator": "getEmailWithConfirm.lg",
-  "recognizer": "getEmailWithConfirm.lu"
+  "generator": "getPhoneWithConfirm.lg",
+  "recognizer": "getPhoneWithConfirm.lu"
 }
