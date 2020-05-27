@@ -29,7 +29,7 @@
               "disabled": false,
               "maxTurnCount": 3,
               "alwaysPrompt": true,
-              "allowInterruptions": false,
+              "allowInterruptions": true,
               "prompt": "${TextInput_Prompt_2VlLP5()}",
               "property": "turn.text",
               "outputFormat": "=trim(this.value)"
@@ -45,7 +45,7 @@
               "disabled": false,
               "maxTurnCount": 3,
               "alwaysPrompt": true,
-              "allowInterruptions": false,
+              "allowInterruptions": true,
               "prompt": "${TextInput_Prompt_8vHNfS()}",
               "property": "turn.text",
               "outputFormat": "=trim(this.value)"
@@ -88,7 +88,32 @@
           ]
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "cCBlMD"
+      },
+      "intent": "done",
+      "actions": [
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "Hl2886"
+          },
+          "value": "=join(dialog.inputs,\"\\n\")"
+        }
+      ]
     }
   ],
-  "generator": "getMultiline.lg"
+  "generator": "getMultiline.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "done",
+        "pattern": "^(done|end|quit|finished)$"
+      }
+    ]
+  }
 }
