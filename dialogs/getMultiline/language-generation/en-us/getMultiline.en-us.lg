@@ -1,0 +1,19 @@
+[import](common.lg)
+
+
+
+# TextInput_Prompt_2VlLP5()
+- IF: ${ dialog.prompt }
+ - ${ dialog.prompt }
+- ELSE: 
+ - Send your response. You may use multiple messages. Say DONE when you are finished.
+
+# TextInput_Prompt_8vHNfS()
+[Activity
+text=I've got:\n ${ join(foreach(dialog.inputs,x,"> " +x),"\n\n")}\n\nContinue, or say ${ coalesce(dialog.doneButton, 'Done') } to end.
+SuggestedActions=${ coalesce(dialog.doneButton, 'Done') }
+]
+
+
+
+

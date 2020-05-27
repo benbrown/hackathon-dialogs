@@ -112,12 +112,7 @@
                   },
                   "activityProcessed": true,
                   "allowLoop": false,
-                  "options": {
-                    "prompt": "${ dialog.prompt }",
-                    "reprompt": "${ dialog.reprompt }",
-                    "confirm": "${ dialog.confirm }",
-                    "restart": "${ dialog.restart }"
-                  }
+                  "options": "{ prompt: dialog.prompt, reprompt: dialog.reprompt, restart: dialog.restart, confirm: dialog.confirm}"
                 }
               ],
               "elseActions": [
@@ -135,12 +130,7 @@
                   },
                   "activityProcessed": true,
                   "allowLoop": false,
-                  "options": {
-                    "prompt": "${ dialog.prompt }",
-                    "reprompt": "${ dialog.reprompt }",
-                    "confirm": "${ dialog.confirm }",
-                    "restart": "${ dialog.restart }"
-                  }
+                  "options": "{ prompt: dialog.prompt, reprompt: dialog.reprompt, restart: dialog.restart, confirm: dialog.confirm}"
                 }
               ]
             }

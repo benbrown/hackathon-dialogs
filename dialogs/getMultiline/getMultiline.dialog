@@ -1,0 +1,94 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "goCquZ",
+    "name": "getMultiline",
+    "description": "Allow a user to send multiple lines of text for a single value"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "3If8Oh"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "cQZy48"
+          },
+          "actions": [
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "2VlLP5"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": true,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_2VlLP5()}",
+              "property": "turn.text",
+              "outputFormat": "=trim(this.value)"
+            }
+          ],
+          "condition": "!dialog.inputs || count(dialog.inputs)==0",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "8vHNfS"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": true,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_8vHNfS()}",
+              "property": "turn.text",
+              "outputFormat": "=trim(this.value)"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "LZadZl"
+          },
+          "condition": "toLower(turn.text) == toLower(coalesce(dialog.doneButton, 'Done'))",
+          "actions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "ho8Fv9"
+              },
+              "value": "=join(dialog.inputs,\"\\n\")"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "vQU7a8"
+              },
+              "changeType": "push",
+              "itemsProperty": "dialog.inputs",
+              "value": "=turn.text"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "4Hb37N"
+              },
+              "activityProcessed": true,
+              "options": "{inputs: dialog.inputs, prompt: dialog.prompt, doneButton: dialog.doneButton}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "getMultiline.lg"
+}

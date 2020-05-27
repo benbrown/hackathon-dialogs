@@ -18,6 +18,33 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
+            "id": "OgPD0m"
+          },
+          "activity": "${SendActivity_OgPD0m()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "nCxHGK"
+          },
+          "activityProcessed": true,
+          "dialog": "getMultiline",
+          "resultProperty": "dialog.text",
+          "options": {
+            "prompt": "Send your feedback. Say END to end.",
+            "doneButton": "End"
+          }
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "6KKjVA"
+          },
+          "activity": "${SendActivity_6KKjVA()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
             "id": "Qi5MBE"
           },
           "activity": "${SendActivity_Qi5MBE()}"
@@ -28,7 +55,15 @@
             "id": "FnbnpP"
           },
           "activityProcessed": true,
-          "dialog": "getEmail"
+          "dialog": "getEmail",
+          "resultProperty": "user.email"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "9QXEBF"
+          },
+          "activity": "${SendActivity_9QXEBF()}"
         },
         {
           "$kind": "Microsoft.SendActivity",
@@ -45,6 +80,13 @@
           "activityProcessed": true,
           "dialog": "getEmailWithConfirm",
           "resultProperty": "user.email"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Z2L8b8"
+          },
+          "activity": "${SendActivity_Z2L8b8()}"
         },
         {
           "$kind": "Microsoft.SendActivity",

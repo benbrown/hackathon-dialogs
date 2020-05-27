@@ -10,3 +10,11 @@
 - GET AN EMAIL ADDRESS, NO CONFIRM
 # SendActivity_yc8qRH()
 - GET AN EMAIL ADDRESS WITH CONFIRMATION
+# SendActivity_9QXEBF()
+- PARENT BOT GOT EMAIL = ${ user.email }
+# SendActivity_Z2L8b8()
+- PARENT BOT GOT EMAIL = ${ user.email }
+# SendActivity_OgPD0m()
+- MULTI-LINE INPUTS!!
+# SendActivity_6KKjVA()
+- MULTILINE RESPONSE WAS: ```${ dialog.text }```

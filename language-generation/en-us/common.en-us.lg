@@ -1,2 +1,21 @@
 # WelcomeUser
-- Welcome to the EmptyBot sample
+- Welcome ${ UserName() } to the EmptyBot sample
+- Hi! ${ UserName() } WElcome to the sample.
+- Howdy ${ UserName() } !!
+
+# UserName()
+- IF: ${user.name}
+ - ${ user.name }
+- ELSE:
+ - USER FRIEND
+- HUMAN FRIEND
+
+# shoppingCart(cart) 
+- You have ${ pluralize(cart.items.length, 'item', 'items')}
+
+# pluralize(number, singular, plural) 
+- IF: ${number==1}
+ - ${ singular }
+- ELSE: 
+ - ${ plural }
+
